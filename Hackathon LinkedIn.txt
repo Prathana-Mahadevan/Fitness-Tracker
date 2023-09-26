@@ -1,0 +1,42 @@
+I recently had a wonderful opportunity to participate Makeathon conducted by CHRIST(Yeshwanthpur Campus). It was an intense experience where I collaborated with some brilliant minds to tackle real-world problems through innovative solutions. 💡
+I'm delited to share that I, along with Hiranya Bontra and Sai Savya had a prevelige to participate as a team in Makeathon organised my Department of Computer Science(CHRIST Yeshwanthpur),in association with Open Weaver, and are recognised as 6th Makeathon finalist team. 
+
+On this note I would like to extend my gratitides to the Department of Computer Science for rendering us an oppurtinity to develope an digital product with no coding,using the available Generative AI API's.
+We built a Web App named "Legal Minds" which could facilite in handling the legal Documents for both Authorities and General Public.
+
+We offered the following services:
+
+For Authorities:
+1. Badge Creation to categorize the type of case(ie.personal or public case) using Text to Image API
+2. Document Format Generator using Content Generator API
+
+For the General Public:
+1. Legal Document Summarizer for summarising the large documents using Text Summarization API
+2. Document Translator using Human Language Translation API
+3. Signature Identification using Named Entity Recognition API
+4. Sentiment Identification of the document using Sentiment Analysis API
+
+This experience was an incredible journey filled with innovation, problem-solving, and collaboration with some of the brightest minds in the field.Sharing my official certificate issued by Open Weaver 
+
+
+Certainly, here's an enhanced LinkedIn post based on the information you provided:
+
+🚀 I'm delighted to share a memorable achievement! Alongside my talented teammates, Hiranya Bontra and Sai Savya, I had the privilege of participating as a team in the Makeathon organized by the Department of Computer Science at CHRIST (Yeshwanthpur), in collaboration with Open Weaver. We are thrilled to announce that our team has been recognized as 6th finalists in the Makeathon.
+
+🌐 During this exciting journey, we had the unique opportunity to develop a digital product without coding, harnessing the power of cutting-edge Generative AI APIs. Our creation, 'Legal Minds,' is a web application designed to streamline the handling of legal documents for both authorities and the general public.
+
+For Authorities, 'Legal Minds' offers:
+1️⃣ Badge Creation to categorize case types using Text to Image API.
+2️⃣ Document Format Generator using Content Generator API.
+
+For the General Public, our app provides:
+1️⃣ Legal Document Summarizer to condense lengthy documents using Text Summarization API.
+2️⃣ Document Translator for easy language translation using Human Language Translation API.
+3️⃣ Signature Identification through Named Entity Recognition API.
+4️⃣ Sentiment Identification of documents using Sentiment Analysis API.
+
+This experience was an incredible journey filled with innovation, problem-solving, and collaboration with some of the brightest minds in the field.Sharing my official certificate issued by Open Weaver.I would like to extend my gratitides to the Department of Computer Science for providing us with the opportunity to create something meaningful using AI technology.
+
+📜 Here's a glimpse of our official certificate issued by Open Weaver.
+
+#MakeathonFinalist #Innovation #AI #LegalTech #Teamwork #CHRISTUniversity #OpenWeaver 
