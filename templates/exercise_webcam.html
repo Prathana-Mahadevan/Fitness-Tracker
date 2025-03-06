@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Webcam</title>
+</head>
+<body>
+    <h1>Bicep Curls Exercise</h1>
+    <p>Follow the instructions and perform the exercise while watching yourself in the webcam feed.</p>
+    
+    <video id="webcam" autoplay playsinline></video>
+
+    <script src="{{ url_for('static', filename='exercise_webcam.js') }}"></script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask and JavaScript</title>
+</head>
+<body>
+    <video class="input_video"></video>
+    <canvas class="output_canvas"></canvas>
+    <!-- Other HTML content here -->
+    <button id="quit_button">Quit Exercise</button>
+    <script>
+       scr = "gym_tracker.js"
+    </script>
+</body>
+</html>

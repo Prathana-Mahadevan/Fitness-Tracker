@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <h1>Live Exercise Progress</h1>
+    <div id="date-time-display">Day 1</div>
+    <canvas id="exercise-chart" width="400" height="200"></canvas>
+    <!-- Other live dashboard content here -->
+    <button id="stopExercise">Stop Exercise</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById('exercise-chart').getContext('2d');
+            let chart;
+
+            // Function to fetch and update data
+            function updateChart() {
+                fetch('/get_dashboard_data')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Extract data from the response
+                        const timestamps = data.map(entry => new Date(entry.timestamp));
+                        const repCounts = data.map(entry => entry.rep_count);
+
+                        // Update the date and time display
+                        const currentDate = new Date(timestamps[timestamps.length - 1]);
+                        document.getElementById('date-time-display').textContent = `Day ${currentDate.getDate()}`;
+
+                        // Create or update the chart
+                        if (chart) {
+                            chart.data.labels = timestamps;
+                            chart.data.datasets[0].data = repCounts;
+                            chart.update();
+                        } else {
+                            chart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: timestamps,
+                                    datasets: [{
+                                        label: 'Rep Count vs Time',
+                                        data: repCounts,
+                                        borderColor: 'rgba(75, 192, 192, 1)',
+                                        borderWidth: 2,
+                                        fill: false,
+                                    }],
+                                },
+                                options: {
+                                    scales: {
+                                        x: {
+                                            type: 'time',
+                                            time: {
+                                                unit: 'day',
+                                                displayFormats: {
+                                                    day: 'MMM DD',
+                                                },
+                                            },
+                                            ticks: {
+                                                stepSize: 1,
+                                            },
+                                        },
+                                        y: {
+                                            beginAtZero: true,
+                                            ticks: {
+                                                stepSize: 5,
+                                            },
+                                        },
+                                    },
+                                },
+                            });
+                        }
+                    });
+            }
+
+            // Initial update
+            updateChart();
+
+            // Schedule periodic updates (e.g., every minute)
+            setInterval(updateChart, 60000);
+        });
+    </script>
+</body>
+</html>

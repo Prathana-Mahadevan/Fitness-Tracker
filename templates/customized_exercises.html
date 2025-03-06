@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Exercises</title>
+    <!-- Link to your CSS file (assuming it's in the 'static' folder) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='customized_exercises.css') }}">
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='gym_tracker.js') }}"></script>
+    <script src="/static/gym_tracker.js" defer></script>
+
+</head>
+<body>
+    <h1>Your Customized Exercises</h1>
+
+    <h2>Let's Start with Some Warm-Up Exercises:</h2>
+    <ol>
+        <li><a href="/exercise?name=March_on_spot">March on Spot</a></li>
+        <li><a href="/exercise?name=knee_bends">Knee Bends</a></li>
+        <li><a href="/exercise?name=Arm_swing">Arm Swing</a></li>
+    </ol>
+
+    <h2>Exercises:</h2>
+    <h3>Upper Body:</h3>
+    <ol>
+        <li><a href="/exercise?name=Arm_circles">Arm Circles</a></li>
+        <li><a href="/exercise_bicep_curls">Bicep Curls</a></li>
+        <li><a href="/exercise?name=Back_turns">Back Turns</a></li>
+        <!-- Add more upper body exercises -->
+    </ol>
+
+    <h3>Lower Body:</h3>
+    <ol>
+        <li><a href="/exercise?name=Lunges">Lunges</a></li>
+        <li><a href="/exercise?name=Leg_press">Leg Press</a></li>
+        <li><a href="/exercise?name=Side_legs">Side Legs</a></li>
+        <!-- Add more lower body exercises -->
+    </ol>
+
+    <h3>Cardio:</h3>
+    <ol>
+        <li><a href="/exercise?name=High_Knees">High Knees</a></li>
+        <li><a href="/exercise?name=Burpees">Burpees</a></li>
+        <!-- Add more cardio exercises -->
+    </ol>
+
+    <h3>Yoga and Stretching:</h3>
+    <ol>
+        <li><a href="/exercise?name=Warrior_pose">Warrior Pose</a></li>
+        <li><a href="/exercise?name=Bridge_pose">Bridge Pose</a></li>
+        <!-- Add more yoga and stretching exercises -->
+    </ol>
+    <!-- ... Your existing body content ... -->
+    <a href="/dashboard">Go to Dashboard</a>
+    <!-- Modal for exercise details -->
+    <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Exercise Details</h2>
+            <p id="exerciseDescription">Exercise description goes here.</p>
+            <!-- You can customize the content of the modal as needed -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle modal functionality
+        var modal = document.getElementById('exerciseModal');
+        var closeBtn = document.querySelector('.close');
+
+        // Function to open the modal with exercise details
+        function openExerciseModal(description) {
+                // Check if a description is available, otherwise provide a generic message
+            if (description) {
+                document.getElementById('exerciseDescription').textContent = description;
+            } else {
+                document.getElementById('exerciseDescription').textContent = "Exercise details not available.";
+            }
+            modal.style.display = 'block';
+        }
+
+        // Close the modal when the user clicks the close button
+        closeBtn.onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        // Close the modal when the user clicks outside of it
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
